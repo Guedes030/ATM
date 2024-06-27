@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="8;url=siete.html">
+
+    <title>loading...</title>
+</head>
+<style>
+    .ft{
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        filter: brightness(100%);
+        z-index: -1;
+        animation: brilho 8s forwards;
+    }
+    .text{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        color: white;
+        font-size: 3rem;
+        z-index: 1;
+        text-shadow: 2px 2px 1rem white;
+
+    }
+    @keyframes brilho{
+        from{
+filter: brightness(120%);
+        }
+        to{
+filter: brightness(10%);
+        }
+    }
+</style>
+<body>
+    <img src="pexels-jplenio-1114897.jpg" alt="" class="ft">
+    <div class="text">
+<h1>CACHIMBO EDITION</h1>
+    </div>
+</body>
+</html>
