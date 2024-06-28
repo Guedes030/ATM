@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="27.5;url=netcraque.html">
+
+    <title>Document</title>
+</head>
+<style>
+    body {
+  box-shadow: inset #016124 0 0 141px;
+  background-color: #009A39;
+}
+* {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.stadium {
+  position: relative;
+  perspective: 400px;
+  width: 100vw;
+  height: 100vh;
+  min-width: 300px;
+  min-height: 300px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Floor */
+.stadium__floor {
+  animation: rotate 16s linear infinite;
+  -webkit-animation: rotate 16s linear infinite;
+  transform: rotateX(35deg) rotateY(0deg) rotateZ(-75deg);
+  width: 428px;
+  height: 428px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.stadium__floor:before {
+  content: "";
+  transform: translate(-50%, -50%) skew(-20deg) rotate(-11deg);
+  background-color: #FDDE00;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 112%;
+  height: 120%;
+}
+
+.stadium__center {
+  width: 75%;
+  height: 75%;
+  background: #163d8e;
+  box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* Lawn */
+.lawn {
+  background: #306D1D;
+  background: repeating-linear-gradient( 90deg, rgba(48, 109, 29, 0.5) 0%, rgba(48, 109, 29, 0.5) 9%, rgba(31, 96, 3, 0.5) 9%, rgba(31, 96, 4, 0.5) 18%), repeating-linear-gradient( 45deg, #306D1D 0%, #306D1D 9%, #1F6003 9%, #1F6004 18%);
+  position: relative;
+  border: 1px solid white;
+  position: absolute;
+  width: 235px;
+  height: 130px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.lawn__area {
+  position: absolute;
+  border: 1px solid white;
+  width: 28px;
+  height: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lawn__area--left {
+  border-radius: 0 200px 200px 0;
+  left: -1px;
+}
+.lawn__area--right {
+  border-radius: 200px 0 0 200px;
+  right: -1px;
+}
+.lawn__center {
+  left: 50%;
+  height: 100%;
+  background: white;
+  width: 1px;
+  position: absolute;
+  top: 0;
+}
+.lawn__center:after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  border-radius: 50%;
+}
+.lawn__center:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  border-radius: 50%; 
+}
+
+/* Coverage */
+.stadium__coverage {
+  position: relative;
+  transform: rotateX(90deg);
+  left: -10px;
+  top: 10px;
+}
+
+.ly {
+  background: rgba(253, 222, 0, 0.8);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ly--1 {
+  transform: rotateY(5.625deg) translateX(100%);
+  transform-origin: right center;
+}
+.ly--2 {
+  transform: rotateX(-10deg) translateY(99%);
+  transform-origin: bottom center;
+}
+
+/* Grandstand */
+.grandstand {
+  position: relative;
+}
+.grandstand:after {
+  background: linear-gradient(rgb(6, 16, 37), #163d8e);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  transform: rotateX(250deg) translateY(1px);
+  transform-origin: center top;
+  box-shadow: inset 0 0 1px 3px #1d55ca;
+}
+
+@keyframes rotate {
+  0% {transform: rotateX(35deg) rotateY(0deg) rotateZ(-75deg);}
+  25% {transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+  75% {transform: rotateX(70deg) rotateY(0deg) rotateZ(165deg);}
+  100% {transform: rotateX(35deg) rotateY(0deg) rotateZ(285deg);}
+}
+
+</style>
+<body>
+    <div class="stadium">
+        <div class="stadium__floor">
+          <div class="stadium__center">
+            <div class="lawn">
+              <div class="lawn__area lawn__area--left"></div>
+              <div class="lawn__area lawn__area--right"></div>
+              <div class="lawn__center"></div>
+            </div>
+          </div>
+          <div class="stadium__coverage">
+            <div class="ly ly--1">
+              <div class="ly ly--1">
+                <div class="ly ly--2">
+                  <div class="ly ly--2">
+                    <div class="ly ly--2">
+                      <div class="ly ly--2 grandstand">
+                        <div class="ly ly--2">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2">
+                              <div class="ly ly--2">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ly ly--1">
+                  <div class="ly ly--2">
+                    <div class="ly ly--2">
+                      <div class="ly ly--2">
+                        <div class="ly ly--2 grandstand">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2">
+                              <div class="ly ly--2">
+                                <div class="ly ly--2">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ly ly--1">
+                    <div class="ly ly--2">
+                      <div class="ly ly--2">
+                        <div class="ly ly--2">
+                          <div class="ly ly--2 grandstand">
+                            <div class="ly ly--2">
+                              <div class="ly ly--2">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ly ly--1">
+                      <div class="ly ly--2">
+                        <div class="ly ly--2">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2 grandstand">
+                              <div class="ly ly--2">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ly ly--1">
+                        <div class="ly ly--2">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2">
+                              <div class="ly ly--2 grandstand">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ly ly--1">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2">
+                              <div class="ly ly--2">
+                                <div class="ly ly--2 grandstand">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ly ly--1">
+                            <div class="ly ly--1">
+                              <div class="ly ly--1">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2 grandstand">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ly ly--1">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2 grandstand">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="ly ly--1">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2 grandstand">
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ly ly--1">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2 grandstand">
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="ly ly--1">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2 grandstand">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2">
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="ly ly--1">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2 grandstand">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="ly ly--1">
+                                            <div class="ly ly--1">
+                                              <div class="ly ly--1">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2 grandstand">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2">
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="ly ly--1">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2 grandstand">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2">
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="ly ly--1">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2 grandstand">
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2">
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="ly ly--1">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2 grandstand">
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2">
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="ly ly--1">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2 grandstand">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2">
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="ly ly--1">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2 grandstand">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2">
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="ly ly--1">
+                                                            <div class="ly ly--1">
+                                                              <div class="ly ly--1">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2 grandstand">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2">
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="ly ly--1">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2 grandstand">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2">
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="ly ly--1">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2 grandstand">
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2">
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="ly ly--1">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2 grandstand">
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2">
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="ly ly--1">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2 grandstand">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2">
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="ly ly--1">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2 grandstand">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2">
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                          <div class="ly ly--1">
+                                                                            <div class="ly ly--1">
+                                                                              <div class="ly ly--1">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2 grandstand">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2">
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                                <div class="ly ly--1">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2 grandstand">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2">
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                  <div class="ly ly--1">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2 grandstand">
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2">
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                    <div class="ly ly--1">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2 grandstand">
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2">
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                      <div class="ly ly--1">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2 grandstand">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2">
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div class="ly ly--1">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2 grandstand">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2">
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          <div class="ly ly--1">
+                                                                                            <div class="ly ly--1">
+                                                                                              <div class="ly ly--1">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2 grandstand">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2">
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                <div class="ly ly--1">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2 grandstand">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                  <div class="ly ly--1">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2 grandstand">
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                    <div class="ly ly--1">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2 grandstand">
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                      <div class="ly ly--1">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2 grandstand">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <div class="ly ly--1">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2 grandstand">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                          <div class="ly ly--1">
+                                                                                                            <div class="ly ly--1">
+                                                                                                              <div class="ly ly--1">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2 grandstand">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                                <div class="ly ly--1">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2 grandstand">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                  <div class="ly ly--1">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2 grandstand">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="ly ly--1">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2 grandstand">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                      <div class="ly ly--1">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2 grandstand">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="ly ly--1">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2 grandstand">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                          <div class="ly ly--1">
+                                                                                                                            <div class="ly ly--1">
+                                                                                                                              <div class="ly ly--1">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2 grandstand">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                                <div class="ly ly--1">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2 grandstand">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                                <div class="ly ly--2">
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ly ly--1">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2 grandstand">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                                <div class="ly ly--2">
+                                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                                  </div>
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="ly ly--1">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2 grandstand">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                                <div class="ly ly--2">
+                                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                                    </div>
+                                                                                                                                                  </div>
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                      <div class="ly ly--1">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2 grandstand">
+                                                                                                                                                <div class="ly ly--2">
+                                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                                      </div>
+                                                                                                                                                    </div>
+                                                                                                                                                  </div>
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="ly ly--1">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                                <div class="ly ly--2 grandstand">
+                                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                                        </div>
+                                                                                                                                                      </div>
+                                                                                                                                                    </div>
+                                                                                                                                                  </div>
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                          <div class="ly ly--1">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                              <div class="ly ly--2">
+                                                                                                                                                <div class="ly ly--2">
+                                                                                                                                                  <div class="ly ly--2 grandstand">
+                                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                                          </div>
+                                                                                                                                                        </div>
+                                                                                                                                                      </div>
+                                                                                                                                                    </div>
+                                                                                                                                                  </div>
+                                                                                                                                                </div>
+                                                                                                                                              </div>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2">
+                                                                                                                                    <div class="ly ly--2 grandstand">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                            <div class="ly ly--2">
+                                                                                                                                            </div>
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                              <div class="ly ly--2">
+                                                                                                                                <div class="ly ly--2">
+                                                                                                                                  <div class="ly ly--2 grandstand">
+                                                                                                                                    <div class="ly ly--2">
+                                                                                                                                      <div class="ly ly--2">
+                                                                                                                                        <div class="ly ly--2">
+                                                                                                                                          <div class="ly ly--2">
+                                                                                                                                          </div>
+                                                                                                                                        </div>
+                                                                                                                                      </div>
+                                                                                                                                    </div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2">
+                                                                                                                    <div class="ly ly--2 grandstand">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                            <div class="ly ly--2">
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                            <div class="ly ly--2">
+                                                                                                              <div class="ly ly--2">
+                                                                                                                <div class="ly ly--2">
+                                                                                                                  <div class="ly ly--2 grandstand">
+                                                                                                                    <div class="ly ly--2">
+                                                                                                                      <div class="ly ly--2">
+                                                                                                                        <div class="ly ly--2">
+                                                                                                                          <div class="ly ly--2">
+                                                                                                                          </div>
+                                                                                                                        </div>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2">
+                                                                                                    <div class="ly ly--2 grandstand">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2">
+                                                                                                            <div class="ly ly--2">
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                            <div class="ly ly--2">
+                                                                                              <div class="ly ly--2">
+                                                                                                <div class="ly ly--2">
+                                                                                                  <div class="ly ly--2 grandstand">
+                                                                                                    <div class="ly ly--2">
+                                                                                                      <div class="ly ly--2">
+                                                                                                        <div class="ly ly--2">
+                                                                                                          <div class="ly ly--2">
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2">
+                                                                                    <div class="ly ly--2 grandstand">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2">
+                                                                                            <div class="ly ly--2">
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <div class="ly ly--2">
+                                                                              <div class="ly ly--2">
+                                                                                <div class="ly ly--2">
+                                                                                  <div class="ly ly--2 grandstand">
+                                                                                    <div class="ly ly--2">
+                                                                                      <div class="ly ly--2">
+                                                                                        <div class="ly ly--2">
+                                                                                          <div class="ly ly--2">
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2">
+                                                                    <div class="ly ly--2 grandstand">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2">
+                                                                            <div class="ly ly--2">
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="ly ly--2">
+                                                              <div class="ly ly--2">
+                                                                <div class="ly ly--2">
+                                                                  <div class="ly ly--2 grandstand">
+                                                                    <div class="ly ly--2">
+                                                                      <div class="ly ly--2">
+                                                                        <div class="ly ly--2">
+                                                                          <div class="ly ly--2">
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2">
+                                                    <div class="ly ly--2 grandstand">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2">
+                                                            <div class="ly ly--2">
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="ly ly--2">
+                                              <div class="ly ly--2">
+                                                <div class="ly ly--2">
+                                                  <div class="ly ly--2 grandstand">
+                                                    <div class="ly ly--2">
+                                                      <div class="ly ly--2">
+                                                        <div class="ly ly--2">
+                                                          <div class="ly ly--2">
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ly ly--2">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2">
+                                    <div class="ly ly--2 grandstand">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2">
+                                            <div class="ly ly--2">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ly ly--2">
+                              <div class="ly ly--2">
+                                <div class="ly ly--2">
+                                  <div class="ly ly--2 grandstand">
+                                    <div class="ly ly--2">
+                                      <div class="ly ly--2">
+                                        <div class="ly ly--2">
+                                          <div class="ly ly--2">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ly ly--2">
+                <div class="ly ly--2">
+                  <div class="ly ly--2">
+                    <div class="ly ly--2 grandstand">
+                      <div class="ly ly--2">
+                        <div class="ly ly--2">
+                          <div class="ly ly--2">
+                            <div class="ly ly--2">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+<audio src="anitta-mostra-tua-forca-brasil-feat-thiaguinho-fabio-brazza-copa-2022-1_A4ttzmW5.mp3" id="audio"></audio>
+<script>
+    let car = document.getElementById("audio")
+    car.play();
+</script>
