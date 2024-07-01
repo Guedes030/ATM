@@ -173,10 +173,46 @@
   75% {transform: rotateX(70deg) rotateY(0deg) rotateZ(165deg);}
   100% {transform: rotateX(35deg) rotateY(0deg) rotateZ(285deg);}
 }
+.titulo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:2rem;
+  font-size: 2rem;
+  flex-direction: column;
 
+}
+.guia{
+ background-color: #FDDE00;
+ height: 4rem;
+ width: 17rem;
+ border-radius: 4px;
+ box-shadow: 3px 3px 1rem black;
+ transition: .8s;
+}
+.guia:hover{
+  transform: scale(1.1);
+}
+.guia:hover>a{
+  transition: .8s;
+  color: #009A39;
+}
+a{
+  
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
 </style>
 <body>
-    <div class="stadium">
+<div class="titulo">
+  <h1><span style="color: #ffffff;text-shadow: 2px 2px 1rem white;">American's</span> <span style="color: #FFD100;text-shadow: 2px 2px 1rem #FFD100;">Cup</span> <span style="color: #fff;text-shadow: 2px 2px 1rem white;">Edition</span></h1>
+<br>
+<div class="guia">
+<a href="netcraque.html" ><h1>Pular música</h1></a>
+</div>
+</div>  
+  <div class="stadium">
         <div class="stadium__floor">
           <div class="stadium__center">
             <div class="lawn">
