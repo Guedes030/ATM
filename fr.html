@@ -31,7 +31,7 @@
         width: 100vw;
         overflow: hidden;
         position: relative;
-        background-image: linear-gradient(to right,black,56% ,transparent);
+        background-image: linear-gradient(to right,black,100% ,transparent);
 
     }
     .up{
@@ -83,7 +83,7 @@ font-size: 3rem;
   font-style: normal;
 
     }
-    @media(max-width:1300px){
+    @media(max-width:1300px) and (min-width:550px){
         img{
             width: 90vw;
             height: auto;
@@ -93,11 +93,24 @@ font-size: 3rem;
             
         }
     }
+@media (max-width:550px){
+    img{
+            width: 90vw;
+            height: auto;
+        }
+        .up{
+            height: 6vh;
+            
+        }
+        .catálogo>h1{
+            font-size: 1.8rem;
+        }
+    }
+
 </style>
 <body>
     
     <div class="container">
-        <img src="indexbackground.jpg" alt="" class="fundo">
         <div class="up">
 <div class="art"> <h1> Ártemis
 </h1></div>
